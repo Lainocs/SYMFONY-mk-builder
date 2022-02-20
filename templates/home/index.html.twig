@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+    {% block body %}
+        <div class="container">
+            <div class="row">
+                <h1 class="py-5">Mario Builder</h1>
+                {# display all characters #}
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-hover">  
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Personnage</th>
+                                <th>Véhicule</th>
+                                <th>Roues</th>
+                                <th>Deltaplane</th>
+                                <th>Créé par</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for build in builds %}
+                                <tr>
+                                    <td class="align-middle">{{ build.name }}</td>
+                                    <td class="align-middle"><img src="assets/images/characters/{{ build.chara.image }}"></td>
+                                    <td class="align-middle"><img src="assets/images/karts/{{ build.kart.image }}"></td>
+                                    <td class="align-middle"><img src="assets/images/wheels/{{ build.wheel.image }}"></td>
+                                    <td class="align-middle"><img src="assets/images/hangliders/{{ build.hanglider.image }}"></td>
+                                    <td class="align-middle">
+                                        <div>{{ build.user.name }}</div>
+                                        <small class="text-muted">{{build.user.email}}</small>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="3">no records found</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Build{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h1 class="py-5">Edit Build</h1>
+            <div class="col-md-12">
+                {{ include('build/_form.html.twig', {'button_label': 'Update'}) }}
+
+                <a class="btn btn-primary my-2" href="{{ path('profile') }}">Back to list</a>
+            
+                <span class="m-3">{{ include('build/_delete_form.html.twig') }}</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

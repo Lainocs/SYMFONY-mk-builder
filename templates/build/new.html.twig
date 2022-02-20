@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Build{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h1 class="py-5">Create new Build</h1>
+            <div class="col-md-12">
+                {{ include('build/_form.html.twig') }}
+                <div class="d-flex">
+                    <a class="btn btn-primary my-2" href="{{ path('profile') }}">Back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
